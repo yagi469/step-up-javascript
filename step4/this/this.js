@@ -1,4 +1,4 @@
-console.log('>オブジェクトに関数を設定した場合におけるthisのサンプル');
+console.log('> オブジェクトに関数を設定した場合におけるthisのサンプル');
 const obj1 = {
   name: 'これはobj1です',
   test: function() {
@@ -13,7 +13,7 @@ obj1.test();
 // => {name: "これはobj1です", test: f}
 // => true
 
-console.log('クラスにおけるthisのサンプル');
+console.log('> クラスにおけるthisのサンプル');
 class MyClass {
   constructor() {
     this.name = 'これはMyClassです';
@@ -32,3 +32,11 @@ console.log(instance1); // => MyClass { name: "これはMyClassです"}
 instance1.test();
 // => MyClass { name: "これはMyClassです"}
 // => true
+
+console.log('> 「呼び出された時」の所有者のサンプル');
+const obj2 = {
+  name: 'これはobj2です'
+};
+
+obj2.test = obj1.test; // obj1の関数の参照をobj2に代入
+obj2.test();
