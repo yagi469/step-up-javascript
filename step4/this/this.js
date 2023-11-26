@@ -43,3 +43,16 @@ obj2.test();
 
 console.log('> callのサンプル');
 obj1.test.call(obj2); // obj1.testを呼んでいますが、thisはobj2に差し替えて実行します
+
+// グローバルオブジェクト
+console.log('> グローバルオブジェクトのサンプル');
+
+// 何も関数に囲まれていないグローバルスコープのthisはグローバルオブジェクトです
+console.log(this === window); // => true
+
+function globalTest() {
+  console.log(this.window); // => true
+}
+
+// オブジェクトに所有されていないのでthisはwindowです
+globalTest();
