@@ -40,3 +40,6 @@ const obj2 = {
 
 obj2.test = obj1.test; // obj1の関数の参照をobj2に代入
 obj2.test();
+
+console.log('> callのサンプル');
+obj1.test.call(obj2); // obj1.testを呼んでいますが、thisはobj2に差し替えて実行します
